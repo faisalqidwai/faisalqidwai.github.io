@@ -15,7 +15,6 @@
   <meta property="og:description" content="Faisal Qidwai offers over 13 years of experience in general practice, delivering innovative, compassionate, and patient-focused healthcare in Sydney.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.faisalqidwai.com.au">
-  <!-- Optional: Add an OG image if available -->
   <meta name="robots" content="index, follow">
 
   <title>Faisal Qidwai - Leading General Practitioner in Sydney</title>
@@ -36,8 +35,18 @@
   </header>
 
   <!-- Navigation -->
-  <nav class="site-nav">
+  <nav class="site-nav" role="navigation" aria-label="Main Navigation">
     <div class="container nav-container">
+      <!-- Logo / Brand -->
+      <a href="/" class="nav-logo">Faisal Qidwai</a>
+      
+      <!-- Hamburger Toggle for Mobile -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+      
+      <!-- Navigation Links -->
       <ul class="nav-list">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>

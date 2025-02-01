@@ -11,7 +11,7 @@ body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #f5f5f5;
+  background-color: #F9FAFB; /* Light background for contrast */
 }
 
 /* Container for consistent spacing */
@@ -24,7 +24,7 @@ body {
 
 /* Header Styling */
 .site-header {
-  background: linear-gradient(135deg, #2A5C82, #5B9BD5);
+  background: linear-gradient(135deg, #1E3A8A, #2563EB); /* Modern blue gradient */
   color: #fff;
   padding: 2rem 0;
   text-align: center;
@@ -42,7 +42,7 @@ body {
 
 /* Navigation Styling */
 .site-nav {
-  background-color: #fff;
+  background-color: #1E3A8A;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
@@ -51,11 +51,59 @@ body {
 
 .nav-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 0.5rem 0;
+  position: relative;
 }
 
+.nav-logo {
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hamburger Menu Styles */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle-label span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-toggle-label span::before {
+  content: '';
+  top: -10px;
+}
+
+.nav-toggle-label span::after {
+  content: '';
+  top: 10px;
+}
+
+/* Navigation List */
 .nav-list {
   list-style: none;
   display: flex;
@@ -66,7 +114,7 @@ body {
 }
 
 .nav-list a {
-  color: #2A5C82;
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 1rem;
@@ -75,8 +123,7 @@ body {
 
 .nav-list a:hover,
 .nav-list a:focus {
-  background-color: #2A5C82;
-  color: #fff;
+  background-color: #2563EB;
   border-radius: 4px;
 }
 
@@ -93,7 +140,7 @@ body {
 .hero h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #2A5C82;
+  color: #1E3A8A;
 }
 
 .hero p {
@@ -112,13 +159,13 @@ body {
 .section h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: #2A5C82;
+  color: #1E3A8A;
 }
 
 .section h3 {
   font-size: 1.4rem;
   margin: 1.5rem 0 1rem;
-  color: #2A5C82;
+  color: #1E3A8A;
 }
 
 /* List Styling */
@@ -140,24 +187,45 @@ body {
   content: "✓";
   position: absolute;
   left: 0;
-  color: #5B9BD5;
+  color: #2563EB;
   font-weight: bold;
 }
 
 /* Footer Styling */
 .site-footer {
-  background-color: #2A5C82;
+  background-color: #1E3A8A;
   color: #fff;
   text-align: center;
   padding: 1.5rem 0;
 }
 
-/* Responsive Navigation for Mobile Devices */
+/* Responsive Styles for Mobile Devices */
 @media (max-width: 768px) {
-  .nav-list {
-    flex-direction: column;
+  .nav-toggle-label {
+    display: block;
   }
+  
+  .nav-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #1E3A8A;
+    flex-direction: column;
+    display: none;
+  }
+  
   .nav-list li {
-    margin: 0.5rem 0;
+    margin: 0;
+  }
+  
+  .nav-list a {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+  
+  /* Toggle the navigation when the checkbox is checked */
+  .nav-toggle:checked ~ .nav-list {
+    display: flex;
   }
 }
